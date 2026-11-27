@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amar Valobasha & Tomar Misty Face 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Hind Siliguri', sans-serif;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      transition: background 1.2s ease;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    /* ভালোবাসার মোড অন হলে ব্যাকগ্রাউন্ড */
+    body.love-mode {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1ff);
+    }
+
+    /* এক জায়গায় স্থির থাকা মূল ওয়েবসাইট কার্ড */
+    .fixed-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 92%;
+      max-width: 430px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      z-index: 10;
+      transition: all 0.6s ease;
+    }
+
+    body.love-mode .fixed-container {
+      box-shadow: 0 25px 60px rgba(214, 51, 108, 0.35);
+      border-color: #ffb3c6;
+    }
+
+    /* মিষ্টি মুখের ফ্রেম */
+    .photo-frame {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+      border: 4px solid #ff758f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      box-shadow: 0 10px 25px rgba(255, 117, 143, 0.35);
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    body.love-mode .photo-frame {
+      transform: scale(1.06);
+      animation: pulse 2s infinite;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1.05); }
+      50% { transform: scale(1.12); }
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffe3ec;
+      color: #d6336c;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 25px;
+      color: #1e293b;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    body.love-mode h1 {
+      color: #c9184a;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: #e63946;
+      font-weight: 700;
+    }
+
+    /* বাটন ডিজাইন */
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 12px 26px;
+      font-size: 16px;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(201, 24, 74, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(201, 24, 74, 0.45);
+    }
+
+    .btn-dark {
+      background: linear-gradient(135deg, #475569, #1e293b);
+      color: #fff;
+    }
+
+    .btn-no {
+      background: #e2e8f0;
+      color: #475569;
+      position: relative;
+    }
+
+    /* লুকানো সেকশন */
+    .hidden {
+      display: none;
+    }
+
+    /* ছোট নোট বক্স */
+    .love-note {
+      background: #fff0f3;
+      border-left: 4px solid #ff4d6d;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #800f2f;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    /* উড়ে বেড়ানো হার্ট অ্যানিমেশন */
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 24px;
+      animation: floatUp 4.5s linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- এক জায়গায় স্থির থাকা মূল কার্ড -->
+  <div class="fixed-container">
+
+    <!-- ধাপ ১: মন খারাপ ছিল -->
+    <div id="step1">
+      <div class="photo-frame">😔</div>
+      <span class="badge">আগের কথা...</span>
+      <h1>আগে মনটা খুব খারাপ ছিল</h1>
+      <p>দিনগুলো কেমন যেন থমকে ছিল, কোনো কিছুতেই ভালো লাগতো না। চারপাশটা খুব শূন্য মনে হতো...</p>
+      <button class="btn btn-dark" onclick="goToStep2()">তারপর তুমি এলে ✨</button>
+    </div>
+
+    <!-- ধাপ ২: তোমার মিষ্টি মুখ দেখে মন ভালো হলো -->
+    <div id="step2" class="hidden">
+      <div class="photo-frame">
+        <!-- তার ছবি দিতে চাইলে নিচের কমেন্ট তুলে দিয়ে ছবির নাম বসান এবং span লাইনটি মুছে দিন -->
+        <!-- <img src="her-photo.jpg" alt="Tomar Misty Face" /> -->
+        <span>😊💖</span>
+      </div>
+      <span class="badge">তুমি আসার পর 🌸</span>
+      <h1>তোমার মিষ্টি হাসিতেই জাদু!</h1>
+      <p>
+        যখন তুমি এলে, <span class="highlight">তোমার ওই মিষ্টি মুখটা</span> দেখেই আমার সব মন খারাপ এক নিমেষে ভালো হয়ে গেল। তুমিই আমার পৃথিবীর সবচেয়ে সুন্দর অনুভূতি।
+      </p>
+      <button class="btn btn-primary" onclick="goToStep3()">তোমার জন্য একটা কথা 💌</button>
+    </div>
+
+    <!-- ধাপ ৩: ভালোবাসার চিঠি ও প্রশ্ন -->
+    <div id="step3" class="hidden">
+      <div class="photo-frame">🥰❤️</div>
+      <span class="badge">শুধু তোমার জন্য</span>
+      <h1>আমি তোমাকে অনেক ভালোবাসি!</h1>
+      <div class="love-note">
+        "তোমার মিষ্টি হাসিটা যেন সারাজীবন এমনই থাকে। মন খারাপের দিনে তুমিই আমার একমাত্র ভালো থাকার কারণ।" 🫶
+      </div>
+      <p style="font-weight: 600; color: #c9184a;">তুমিও কি আমাকে ভালোবাসো?</p>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="finalLove()">হ্যাঁ, অনেক ভালোবাসি 💖</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">না 🙈</button>
+      </div>
+    </div>
+
+    <!-- ধাপ ৪: ফাইনাল মেসেজ -->
+    <div id="step4" class="hidden">
+      <div class="photo-frame">💑✨</div>
+      <span class="badge">Forever Together</span>
+      <h1>জানতাম তুমি ভালোবাসো! ❤️</h1>
+      <p>
+        সারাজীবন এভাবেই আমার পাশে থেকো। তোমার ওই মিষ্টি মুখের হাসিটা দেখলেই আমার পৃথিবীটা পূর্ণ হয়ে যায়। 🥰🌸
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    let heartInterval;
+
+    function goToStep2() {
+      document.body.classList.add('love-mode');
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+      startHearts();
+    }
+
+    function goToStep3() {
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('step3').classList.remove('hidden');
+    }
+
+    function finalLove() {
+      document.getElementById('step3').classList.add('hidden');
+      document.getElementById('step4').classList.remove('hidden');
+      // একসাথে অনেকগুলো হার্ট ছাড়া
+      for (let i = 0; i < 20; i++) {
+        setTimeout(createHeart, i * 100);
+      }
+    }
+
+    // "না" বাটন সরে যাওয়ার মজার ফাংশন
+    function moveNoButton() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.floor(Math.random() * 140) - 70;
+      const y = Math.floor(Math.random() * 100) - 50;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function startHearts() {
+      if (!heartInterval) {
+        heartInterval = setInterval(createHeart, 350);
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('floating-heart');
+      const items = ['💖', '🌸', '❤️', '✨', '🥰', '🌹'];
+      heart.textContent = items[Math.floor(Math.random() * items.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
